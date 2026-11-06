@@ -1,0 +1,2405 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Srujan Kumar Kottapally | Senior DevSecOps &amp; Cloud Platform Engineer</title>
+  <meta name="description" content="Portfolio of Srujan Kumar Kottapally — Senior DevSecOps and Platform Engineer with 9+ years of experience across AWS, Azure, Kubernetes (CKA), Terraform, GitOps, CI/CD, Observability, Data Platforms, and GenAI Automation." />
+  <meta name="keywords" content="Srujan Kumar Kottapally, DevSecOps Engineer, Platform Engineer, Cloud Architect, Kubernetes, CKA, AWS, Azure, Terraform, ArgoCD, GitHub Actions, Observability, New Relic, Prometheus, Grafana, Airflow, Spark" />
+  <meta name="author" content="Srujan Kumar Kottapally" />
+  <meta property="og:title" content="Srujan Kumar Kottapally — Senior DevSecOps &amp; Platform Engineer" />
+  <meta property="og:description" content="9+ years designing, automating, securing, and operating highly available cloud &amp; Kubernetes platforms across AWS and Azure." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+:root,
+[data-theme="dark"] {
+  --bg-primary: #060911;
+  --bg-secondary: #0b101d;
+  --bg-surface: rgba(15, 23, 42, 0.68);
+  --bg-surface-hover: rgba(23, 35, 62, 0.85);
+  --bg-terminal: #090d16;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-subtle: rgba(148, 163, 184, 0.14);
+  --border-highlight: rgba(56, 189, 248, 0.45);
+  --accent-cyan: #06b6d4;
+  --accent-blue: #3b82f6;
+  --accent-indigo: #6366f1;
+  --accent-purple: #a855f7;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --shadow-card: 0 20px 50px -15px rgba(0, 0, 0, 0.65);
+  --grid-line: rgba(148, 163, 184, 0.045);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-surface: rgba(255, 255, 255, 0.86);
+  --bg-surface-hover: rgba(255, 255, 255, 0.98);
+  --bg-terminal: #0f172a;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-subtle: rgba(15, 23, 42, 0.1);
+  --border-highlight: rgba(2, 132, 199, 0.45);
+  --accent-cyan: #0284c7;
+  --accent-blue: #2563eb;
+  --accent-indigo: #4f46e5;
+  --accent-purple: #7e22ce;
+  --accent-emerald: #059669;
+  --accent-amber: #d97706;
+  --shadow-card: 0 16px 36px -12px rgba(15, 23, 42, 0.08);
+  --grid-line: rgba(15, 23, 42, 0.035);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.mono-text {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Ambient Background */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, #000 50%, transparent 100%);
+  pointer-events: none;
+}
+
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.28;
+}
+
+[data-theme="light"] .bg-glow {
+  opacity: 0.14;
+}
+
+.bg-glow-1 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, var(--accent-cyan), transparent 70%);
+  top: -140px;
+  left: -100px;
+}
+
+.bg-glow-2 {
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, var(--accent-indigo), transparent 70%);
+  top: 120px;
+  right: -180px;
+}
+
+.bg-glow-3 {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, var(--accent-emerald), transparent 70%);
+  bottom: 10%;
+  left: 20%;
+  opacity: 0.15;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(6, 9, 17, 0.78);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: all 0.25s ease;
+}
+
+[data-theme="light"] .navbar {
+  background: rgba(248, 250, 252, 0.85);
+}
+
+.nav-container {
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.brand-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.16), rgba(99, 102, 241, 0.16));
+  border: 1px solid var(--border-highlight);
+  color: var(--text-primary);
+}
+
+.brand-bracket {
+  color: var(--accent-cyan);
+}
+
+.brand-slash {
+  color: var(--accent-purple);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+}
+
+.brand-role {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+  background: rgba(148, 163, 184, 0.1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--border-highlight);
+  transform: translateY(-1px);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+[data-theme="dark"] .icon-moon {
+  display: none;
+}
+
+[data-theme="light"] .icon-sun {
+  display: none;
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  padding: 9px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.mobile-menu-btn span {
+  width: 18px;
+  height: 2px;
+  background: var(--text-primary);
+  display: block;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.78rem 1.35rem;
+  border-radius: 11px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.22s ease;
+  font-family: inherit;
+}
+
+.btn-sm {
+  padding: 0.52rem 1rem;
+  font-size: 0.84rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
+  color: #ffffff;
+  box-shadow: 0 8px 25px -6px rgba(6, 182, 212, 0.5);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -6px rgba(6, 182, 212, 0.7);
+}
+
+.btn-glass {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+.btn-glass:hover {
+  border-color: var(--border-highlight);
+  background: var(--bg-surface-hover);
+  transform: translateY(-2px);
+}
+
+.social-Cluster {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  color: var(--accent-cyan);
+  border-color: var(--border-highlight);
+  transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+  padding: 5.5rem 0;
+}
+
+.section-alt {
+  background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.35), transparent);
+}
+
+[data-theme="light"] .section-alt {
+  background: linear-gradient(180deg, transparent, rgba(226, 232, 240, 0.5), transparent);
+}
+
+.section-header {
+  max-width: 720px;
+  margin-bottom: 3rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.65rem;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+  font-weight: 800;
+  margin-bottom: 0.85rem;
+}
+
+.section-desc {
+  color: var(--text-secondary);
+  font-size: 1.04rem;
+}
+
+/* Hero */
+.hero {
+  padding-top: 4rem;
+  padding-bottom: 3.5rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 2.75rem;
+  align-items: center;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.38rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--accent-emerald);
+  font-size: 0.74rem;
+  font-weight: 600;
+  margin-bottom: 1.35rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 10px var(--accent-emerald);
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.65; }
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 4.2vw, 3.45rem);
+  font-weight: 800;
+  line-height: 1.12;
+  margin-bottom: 1.25rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 55%, #c084fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.06rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.45rem;
+  max-width: 620px;
+}
+
+.hero-subtitle strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.85rem;
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.36rem 0.78rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.chip-dot.cyan { background: var(--accent-cyan); }
+.chip-dot.blue { background: var(--accent-blue); }
+.chip-dot.purple { background: var(--accent-purple); }
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+/* Interactive Terminal */
+.terminal-window {
+  background: var(--bg-terminal);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card), 0 0 40px -15px rgba(6, 182, 212, 0.25);
+  color: #e2e8f0;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dots .dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.dot.red { background: #ef4444; }
+.dot.yellow { background: #f59e0b; }
+.dot.green { background: #10b981; }
+
+.terminal-title {
+  font-size: 0.76rem;
+  color: #94a3b8;
+}
+
+.terminal-badge {
+  font-size: 0.68rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(6, 182, 212, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.terminal-quick-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  background: rgba(15, 23, 42, 0.55);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.quick-label {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-right: 0.2rem;
+}
+
+.cmd-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  padding: 0.22rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(30, 41, 59, 0.9);
+  color: #bae6fd;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cmd-pill:hover {
+  background: rgba(6, 182, 212, 0.22);
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+.terminal-body {
+  padding: 1rem;
+  height: 285px;
+  overflow-y: auto;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.term-line {
+  margin-top: 0.45rem;
+  margin-bottom: 0.25rem;
+}
+
+.term-line:first-child {
+  margin-top: 0;
+}
+
+.term-prompt {
+  color: #10b981;
+  font-weight: 600;
+  margin-right: 0.4rem;
+}
+
+.term-cmd {
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.term-output {
+  color: #cbd5e1;
+  white-space: pre-wrap;
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.t-green { color: #34d399; font-weight: 600; }
+.t-cyan { color: #38bdf8; font-weight: 600; }
+.t-amber { color: #fbbf24; font-weight: 600; }
+.t-purple { color: #c084fc; font-weight: 600; }
+.t-muted { color: #64748b; }
+
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background: rgba(15, 23, 42, 0.85);
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f8fafc;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.terminal-input::placeholder {
+  color: #475569;
+}
+
+/* Metrics Bar */
+.metrics-section {
+  padding: 1rem 0 2.5rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.metric-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.25rem 1rem;
+  backdrop-filter: blur(12px);
+  transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-highlight);
+}
+
+.metric-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.metric-sub {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+}
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.35rem;
+}
+
+.bento-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 1.75rem;
+  backdrop-filter: blur(14px);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-card:hover {
+  border-color: var(--border-highlight);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.bento-span-2 {
+  grid-column: span 2;
+}
+
+.bento-span-3 {
+  grid-column: span 3;
+}
+
+.bento-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.bento-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.bento-icon.cyan { background: rgba(6, 182, 212, 0.14); color: var(--accent-cyan); }
+.bento-icon.purple { background: rgba(168, 85, 247, 0.14); color: var(--accent-purple); }
+.bento-icon.emerald { background: rgba(16, 185, 129, 0.14); color: var(--accent-emerald); }
+.bento-icon.amber { background: rgba(245, 158, 11, 0.14); color: var(--accent-amber); }
+.bento-icon.blue { background: rgba(59, 130, 246, 0.14); color: var(--accent-blue); }
+
+.bento-meta {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent-cyan);
+  margin-bottom: 0.4rem;
+}
+
+.bento-card h3 {
+  font-size: 1.28rem;
+  margin-bottom: 0.75rem;
+}
+
+.bento-card p {
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.bento-card p strong {
+  color: var(--text-primary);
+}
+
+.bento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.bento-tags span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.73rem;
+  padding: 0.28rem 0.62rem;
+  border-radius: 7px;
+  background: rgba(148, 163, 184, 0.09);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.bento-tags-right {
+  max-width: 420px;
+}
+
+/* Interactive Skills Matrix */
+.skills-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.85rem;
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 0.95rem;
+  border-radius: 9px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.18), rgba(99, 102, 241, 0.18));
+  border-color: var(--border-highlight);
+  color: var(--text-primary);
+}
+
+.skill-search {
+  width: 280px;
+  padding: 0.58rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.86rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.skill-search:focus {
+  border-color: var(--border-highlight);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  gap: 0.9rem;
+}
+
+.skill-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.skill-card:hover {
+  border-color: var(--border-highlight);
+  transform: translateY(-2px);
+}
+
+.skill-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.skill-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.skill-cat {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 5px;
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--accent-cyan);
+}
+
+.skill-context {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Experience Timeline */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2.48rem;
+  top: 1.75rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 3px solid var(--accent-cyan);
+}
+
+.timeline-marker.active-marker {
+  background: var(--accent-emerald);
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 12px var(--accent-emerald);
+}
+
+.timeline-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 2rem;
+  backdrop-filter: blur(14px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.timeline-card:hover {
+  border-color: var(--border-highlight);
+  box-shadow: var(--shadow-card);
+}
+
+.timeline-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.role-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.company-pill {
+  font-weight: 700;
+  font-size: 0.84rem;
+  padding: 0.24rem 0.72rem;
+  border-radius: 7px;
+  background: rgba(6, 182, 212, 0.14);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.award-pill {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.22rem 0.65rem;
+  border-radius: 7px;
+  background: rgba(245, 158, 11, 0.14);
+  color: var(--accent-amber);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+}
+
+.current-pill {
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 7px;
+  background: rgba(16, 185, 129, 0.14);
+  color: var(--accent-emerald);
+}
+
+.domain-pill {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 7px;
+  background: rgba(99, 102, 241, 0.14);
+  color: var(--accent-indigo);
+}
+
+.role-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.role-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.impact-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.4rem;
+}
+
+.mini-kpi {
+  padding: 0.75rem 0.9rem;
+  border-radius: 11px;
+  background: rgba(148, 163, 184, 0.06);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-kpi strong {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.92rem;
+  color: var(--accent-cyan);
+}
+
+.mini-kpi span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.role-bullets {
+  padding-left: 1.2rem;
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+}
+
+.role-bullets strong {
+  color: var(--text-primary);
+}
+
+.role-bullets code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.84rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 5px;
+  background: rgba(148, 163, 184, 0.12);
+}
+
+/* Blueprints */
+.blueprint-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.35rem;
+}
+
+.blueprint-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.blueprint-card:hover {
+  border-color: var(--border-highlight);
+  transform: translateY(-4px);
+}
+
+.blueprint-number {
+  font-size: 0.74rem;
+  color: var(--accent-purple);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.blueprint-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.blueprint-card p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+  flex: 1;
+}
+
+.arch-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+}
+
+[data-theme="light"] .arch-flow {
+  background: rgba(241, 245, 249, 0.9);
+}
+
+.flow-arrow {
+  color: var(--text-muted);
+}
+
+.blueprint-outcome {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.85rem;
+}
+
+.blueprint-outcome strong {
+  color: var(--accent-emerald);
+}
+
+/* Credentials & Honors */
+.credentials-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2rem;
+}
+
+.cred-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.15rem;
+  color: var(--text-primary);
+}
+
+.cred-heading svg {
+  color: var(--accent-cyan);
+}
+
+.edu-heading {
+  margin-top: 1.85rem;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.05rem 1.2rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  margin-bottom: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.cert-card:hover {
+  border-color: var(--border-highlight);
+  transform: translateX(4px);
+}
+
+.cert-featured {
+  border-color: rgba(6, 182, 212, 0.4);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), var(--bg-surface));
+}
+
+.cert-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 0.8rem;
+  min-width: 86px;
+  text-align: center;
+  padding: 0.55rem 0.5rem;
+  border-radius: 10px;
+}
+
+.cert-badge.cka {
+  background: rgba(6, 182, 212, 0.18);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+}
+
+.cert-badge.azure {
+  background: rgba(59, 130, 246, 0.16);
+  color: var(--accent-blue);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+.cert-info h4 {
+  font-size: 0.98rem;
+  margin-bottom: 0.15rem;
+}
+
+.cert-info p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.award-card {
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  margin-bottom: 0.8rem;
+}
+
+.award-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.award-title {
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.award-org {
+  font-size: 0.76rem;
+  color: var(--accent-cyan);
+}
+
+.award-card p {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+/* Contact */
+.contact-box {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(99, 102, 241, 0.1));
+  border: 1px solid var(--border-highlight);
+  border-radius: 24px;
+  padding: 3rem;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.15rem 1.35rem;
+}
+
+.contact-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.contact-value-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.contact-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  word-break: break-all;
+}
+
+.contact-link a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.copy-btn {
+  padding: 0.3rem 0.65rem;
+  border-radius: 7px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--accent-cyan);
+  font-size: 0.74rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background: var(--accent-cyan);
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 2rem 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-sep {
+  margin: 0 0.5rem;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .bento-grid,
+  .blueprint-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-span-2,
+  .bento-span-3 {
+    grid-column: span 1;
+  }
+  .bento-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .bento-tags-right {
+    max-width: 100%;
+  }
+  .impact-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-subtle);
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+  .contact-box {
+    padding: 1.75rem;
+  }
+  .role-meta {
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  .navbar,
+  .hero-terminal-wrapper,
+  .skills-toolbar,
+  .bg-grid,
+  .bg-glow,
+  .hero-cta {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .section {
+    padding: 1.5rem 0 !important;
+  }
+}
+
+</style>
+</head>
+<body>
+  <!-- Ambient Background Layers -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-3" aria-hidden="true"></div>
+
+  <!-- Top Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#top" class="brand" aria-label="Srujan Kumar Kottapally Home">
+        <span class="brand-logo">
+          <span class="brand-bracket">&lt;</span>SK<span class="brand-slash">/</span><span class="brand-bracket">&gt;</span>
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">Srujan Kottapally</span>
+          <span class="brand-role">DevSecOps · Platform · AI</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary Navigation">
+        <a href="#pillars" class="nav-link">Architecture</a>
+        <a href="#skills" class="nav-link">Tech Stack</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#blueprints" class="nav-link">Case Studies</a>
+        <a href="#credentials" class="nav-link">Credentials</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle Dark/Light Mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm">Let's Connect</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO SECTION -->
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span class="mono-text">SYS.STATUS: ONLINE · HYDERABAD, IN · 9+ YRS EXP</span>
+          </div>
+
+          <h1 class="hero-title">
+            Engineering <span class="gradient-text">Resilient Cloud Platforms</span>, Zero-Drift GitOps &amp; Agentic Automation.
+          </h1>
+
+          <p class="hero-subtitle">
+            Hi, I'm <strong>Srujan Kumar Kottapally</strong> — a <strong>Senior DevSecOps &amp; Platform Engineer</strong> specializing in multi-region <strong>AWS &amp; Azure</strong> architecture, production <strong>Kubernetes (CKA)</strong>, modular <strong>Terraform</strong>, enterprise observability, K8s data platforms (Airflow, Spark, Flink), and <strong>LLM-powered DevOps workflows</strong>.
+          </p>
+
+          <div class="hero-badges">
+            <span class="tech-chip"><span class="chip-dot cyan"></span>Certified Kubernetes Admin (CKA)</span>
+            <span class="tech-chip"><span class="chip-dot blue"></span>4x Microsoft Azure Certified</span>
+            <span class="tech-chip"><span class="chip-dot purple"></span>GenAI &amp; Hermes ChatOps</span>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#experience" class="btn btn-primary">
+              <span>View Career Impact</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button type="button" class="btn btn-glass" id="print-resume-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+              <span>Print / Save CV</span>
+            </button>
+            <div class="social-Cluster">
+              <a href="https://github.com/srujan259" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub Profile" title="GitHub (srujan259)">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.05 11.05 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+              </a>
+              <a href="https://linkedin.com/in/k-srujan" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn Profile" title="LinkedIn (in/k-srujan)">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
+              </a>
+              <a href="mailto:ksrujan259@gmail.com" class="icon-btn" aria-label="Email Srujan" title="ksrujan259@gmail.com">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE CLOUD CONTROL PLANE TERMINAL -->
+        <div class="hero-terminal-wrapper">
+          <div class="terminal-window" role="region" aria-label="Interactive DevSecOps Terminal">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="terminal-title mono-text">srujan@platform-control-plane: ~ (zsh)</div>
+              <div class="terminal-badge mono-text">eks · aks · gitops</div>
+            </div>
+
+            <div class="terminal-quick-bar">
+              <span class="quick-label mono-text">Run:</span>
+              <button type="button" class="cmd-pill" data-cmd="whoami">whoami</button>
+              <button type="button" class="cmd-pill" data-cmd="kubectl get clusters">kubectl get clusters</button>
+              <button type="button" class="cmd-pill" data-cmd="hermes status">hermes status</button>
+              <button type="button" class="cmd-pill" data-cmd="certs --verify">certs --verify</button>
+              <button type="button" class="cmd-pill" data-cmd="clear">clear</button>
+            </div>
+
+            <div class="terminal-body mono-text" id="terminal-body">
+              <div class="term-line"><span class="term-prompt">srujan@cloud-hq:~$</span> <span class="term-cmd">kubectl get nodes --context=multi-cloud-prod</span></div>
+              <div class="term-output">
+NAME                          STATUS   ROLES           REGION        UPTIME
+aws-eks-keyloop-ca-central    <span class="t-green">Ready</span>    control-plane   ca-central-1  99.99%
+aws-eks-moxe-data-platform    <span class="t-green">Ready</span>    spark-airflow   us-east-1     99.95%
+azure-aks-enterprise-ha       <span class="t-green">Ready</span>    istio-mesh      centralindia  99.99%
+wcnp-walmart-k8s-fleet        <span class="t-green">Ready</span>    worker-pool     multi-region  99.90%
+              </div>
+              <div class="term-line"><span class="term-prompt">srujan@cloud-hq:~$</span> <span class="term-cmd">hermes-agent --status --channel=discord-devops</span></div>
+              <div class="term-output">
+<span class="t-cyan">[HERMES-AI]</span> Agent active · LLM Runbooks &amp; Terraform CI/CD triggers online.
+<span class="t-muted">Type 'help' below or click any command pill above to inspect platform telemetry.</span>
+              </div>
+            </div>
+
+            <form class="terminal-input-row" id="terminal-form" autocomplete="off">
+              <span class="term-prompt mono-text">srujan@cloud-hq:~$</span>
+              <input
+                type="text"
+                id="terminal-input"
+                class="terminal-input mono-text"
+                placeholder="Type a command (try: help, stack, impact, contact)..."
+                aria-label="Terminal command input"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELEMETRY / IMPACT METRICS BAR -->
+    <section class="metrics-section" aria-label="Key Career Metrics">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value mono-text"><span data-count="9">9</span>+</div>
+            <div class="metric-label">Years in DevSecOps &amp; Cloud</div>
+            <div class="metric-sub">Keyloop · Moxe · Walmart · Deloitte</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value mono-text"><span data-count="150">150</span>+</div>
+            <div class="metric-label">CI/CD Pipelines Migrated</div>
+            <div class="metric-sub">Jenkins to Modular GitHub Actions</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value mono-text"><span data-count="99.99">99.99</span>%</div>
+            <div class="metric-label">Production Uptime SLA</div>
+            <div class="metric-sub">Zero-Drift Argo CD &amp; Istio HA</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value mono-text"><span data-count="250">250</span>+</div>
+            <div class="metric-label">K8s Data Workloads</div>
+            <div class="metric-sub">200+ Airflow DAGs &amp; 50+ Spark Jobs</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value mono-text"><span data-count="65">65</span>%</div>
+            <div class="metric-label">Faster Delivery &amp; Ops</div>
+            <div class="metric-sub">Automated IaC, Helm &amp; Ansible</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value mono-text"><span data-count="5">5</span>x</div>
+            <div class="metric-label">Cloud &amp; K8s Certifications</div>
+            <div class="metric-sub">CKA + AZ-104, 303/304, 400, 500</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE ARCHITECTURE PILLARS (BENTO GRID) -->
+    <section class="section" id="pillars">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow mono-text">// 01. ARCHITECTURE DOMAINS</span>
+          <h2 class="section-title">Full-Spectrum Platform Engineering</h2>
+          <p class="section-desc">
+            Designing secure, self-healing, and observable infrastructure from bare-metal and cloud networks up to Kubernetes data planes and AI-driven ChatOps.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card bento-span-2">
+            <div class="bento-icon cyan">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="bento-meta mono-text">CLOUD &amp; KUBERNETES ORCHESTRATION</div>
+            <h3>Multi-Region Cloud &amp; Container Platforms</h3>
+            <p>
+              Architecting high-availability environments across <strong>AWS (EKS, EC2, RDS, S3, Lambda, VPC)</strong> and <strong>Microsoft Azure (AKS, PaaS, Cosmos DB, SQL DB, Blob)</strong>. Spearheaded regional cloud expansions (including Canada go-live for 9–10 product teams) and container migrations across EKS, AKS, and Walmart's Native Container Platform (WCNP) with <strong>Istio</strong> service mesh.
+            </p>
+            <div class="bento-tags">
+              <span>AWS EKS</span><span>Azure AKS</span><span>WCNP</span><span>Istio Mesh</span><span>Multi-Region DR</span><span>IAM &amp; VPC Security</span>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-icon purple">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+            </div>
+            <div class="bento-meta mono-text">AGENTIC AI &amp; CHATOPS</div>
+            <h3>GenAI &amp; Hermes Agent Automation</h3>
+            <p>
+              Built a custom <strong>Hermes Agent</strong> integrated with <strong>Discord</strong> to trigger routine DevOps workflows via natural-language commands, and applied LLMs to accelerate Terraform authoring, log analysis, production troubleshooting, and runbook generation.
+            </p>
+            <div class="bento-tags">
+              <span>Hermes Agent</span><span>LLMs</span><span>Discord ChatOps</span><span>AI Runbooks</span>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-icon emerald">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div class="bento-meta mono-text">INFRASTRUCTURE AS CODE &amp; GITOPS</div>
+            <h3>Zero-Drift Terraform &amp; Argo CD</h3>
+            <p>
+              Implemented GitOps using <strong>Argo CD (App of Apps pattern)</strong> achieving 99.9% deployment reliability and zero configuration drift. Engineered reusable <strong>Terraform</strong> modules, <strong>Helm</strong> charts, and <strong>Ansible</strong> playbooks managing 200+ servers.
+            </p>
+            <div class="bento-tags">
+              <span>Terraform</span><span>Argo CD</span><span>Helm Charts</span><span>Ansible</span><span>ARM</span>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-icon amber">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="bento-meta mono-text">DEVSECOPS &amp; SHIFT-LEFT SECURITY</div>
+            <h3>Hardened CI/CD &amp; Security Gates</h3>
+            <p>
+              Migrated 150+ legacy pipelines to reusable <strong>GitHub Actions</strong> workflows with trunk-based one-click releases. Embedded automated <strong>SAST, DAST, container, dependency, and secret scanning</strong> using Rapid7, SonarQube, Veracode, and Fortify—cutting vulnerabilities by 75%.
+            </p>
+            <div class="bento-tags">
+              <span>GitHub Actions</span><span>Rapid7</span><span>SonarQube</span><span>Veracode</span><span>Fortify</span>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-icon blue">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <div class="bento-meta mono-text">FULL-STACK OBSERVABILITY</div>
+            <h3>APM, Telemetry &amp; FinOps</h3>
+            <p>
+              Delivered end-to-end observability across <strong>New Relic</strong> (provisioned via Terraform), <strong>Prometheus, Grafana, Loki, Dynatrace, and Splunk</strong>—reducing MTTD by 40%, MTTR by 35%, and driving cloud/logging cost optimization.
+            </p>
+            <div class="bento-tags">
+              <span>New Relic</span><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>Dynatrace</span><span>Splunk</span>
+            </div>
+          </article>
+
+          <article class="bento-card bento-span-3">
+            <div class="bento-flex">
+              <div>
+                <div class="bento-meta mono-text">CLOUD-NATIVE DATA PLATFORMS ON KUBERNETES</div>
+                <h3>Scalable Data &amp; Streaming Infrastructure</h3>
+                <p>
+                  Architected open-source data platforms from the ground up on Kubernetes—deploying <strong>50+ Apache Spark workloads</strong> (via SparkKubernetesOperator, spark-submit, Helm, and DAGs) and <strong>200+ Apache Airflow DAGs</strong> with configuration-as-code, alongside <strong>Apache Flink, StarRocks, OpenMetadata, Apache Pulsar, and MinIO</strong> for high-performance OLAP and distributed storage.
+                </p>
+              </div>
+              <div class="bento-tags bento-tags-right">
+                <span>Apache Airflow</span><span>Apache Spark</span><span>SparkK8sOperator</span><span>Apache Flink</span><span>StarRocks</span><span>OpenMetadata</span><span>Pulsar</span><span>MinIO</span><span>PostgreSQL</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE TECH STACK MATRIX -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow mono-text">// 02. TECHNICAL ARSENAL</span>
+          <h2 class="section-title">Interactive Skills &amp; Tooling Matrix</h2>
+          <p class="section-desc">Filter across 10 core engineering categories or search for specific technologies from my production stack.</p>
+        </div>
+
+        <div class="skills-toolbar">
+          <div class="filter-pills" id="skill-filters" role="tablist" aria-label="Skill category filter">
+            <button type="button" class="filter-btn active" data-filter="all">All Technologies</button>
+            <button type="button" class="filter-btn" data-filter="cloud">Cloud &amp; K8s</button>
+            <button type="button" class="filter-btn" data-filter="iac">IaC &amp; GitOps</button>
+            <button type="button" class="filter-btn" data-filter="cicd">CI/CD &amp; DevSecOps</button>
+            <button type="button" class="filter-btn" data-filter="observability">Observability</button>
+            <button type="button" class="filter-btn" data-filter="ai">AI &amp; Automation</button>
+            <button type="button" class="filter-btn" data-filter="data">Data &amp; Web Infra</button>
+          </div>
+          <div class="skill-search-wrap">
+            <input type="search" id="skill-search" class="skill-search" placeholder="Filter technology (e.g., Terraform, EKS, Spark)..." aria-label="Search skills" />
+          </div>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+          <!-- Populated dynamically & accessible fallback via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE TIMELINE -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow mono-text">// 03. PRODUCTION TRACK RECORD</span>
+          <h2 class="section-title">9+ Years of Enterprise Impact</h2>
+          <p class="section-desc">Delivering mission-critical cloud platforms, security automation, and high-velocity release engineering across global organizations.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- KEYLOOP -->
+          <article class="timeline-item">
+            <div class="timeline-marker active-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <div class="role-badge-row">
+                    <span class="company-pill">Keyloop</span>
+                    <span class="award-pill">🏆 Key Contributor Award</span>
+                    <span class="current-pill">Current Role</span>
+                  </div>
+                  <h3 class="role-title">Senior DevSecOps Engineer</h3>
+                </div>
+                <div class="role-meta mono-text">
+                  <span>Apr 2025 – Present</span>
+                  <span>Hyderabad, IN</span>
+                </div>
+              </div>
+
+              <div class="impact-strip">
+                <div class="mini-kpi"><strong>9–10 Teams</strong><span>Multi-Region DevOps Lead</span></div>
+                <div class="mini-kpi"><strong>150+ Pipelines</strong><span>Jenkins → GitHub Actions</span></div>
+                <div class="mini-kpi"><strong>Hermes Agent</strong><span>Discord LLM ChatOps</span></div>
+                <div class="mini-kpi"><strong>Canada Region</strong><span>MVP to Go-Live Expansion</span></div>
+              </div>
+
+              <ul class="role-bullets">
+                <li>Led DevOps efforts for <strong>9–10 product teams</strong> across multiple regions, enabling <strong>Canada region expansion</strong> and driving infrastructure setup, networking, CI/CD, observability, and deployment readiness from MVP to Go-Live.</li>
+                <li>Migrated <strong>150+ Jenkins pipelines to GitHub Actions</strong>, building reusable workflows for Java, Node.js, .NET, Docker, and multi-region deployments.</li>
+                <li>Created reusable <strong>Helm charts</strong> and implemented one-click deploy release workflows with trunk-based development, enabling autoscaling, secure secrets, and <strong>GitOps-based deployments</strong> with Argo CD &amp; JFrog Artifactory.</li>
+                <li>Applied <strong>GenAI and LLM tools</strong> to accelerate Terraform and CI/CD development, production troubleshooting, log analysis, and runbook creation; built a <strong>Hermes Agent integrated with Discord</strong> to trigger routine DevOps workflows through natural-language commands.</li>
+                <li>Used modular <strong>Terraform</strong> to provision AWS EKS, New Relic dashboards, alerts, synthetic monitoring, and cloud resources; delivered full <strong>New Relic APM, logs, and distributed tracing</strong> for SalesHub's Next.js frontend and backend microservices.</li>
+                <li>Implemented DAST/SAST scanning, dependency checks, container scanning, and integrated <strong>Rapid7</strong> security workflows while leading FinOps cost-optimization initiatives across New Relic logging and EKS workloads.</li>
+              </ul>
+
+              <div class="bento-tags">
+                <span>AWS EKS</span><span>Terraform</span><span>GitHub Actions</span><span>Helm</span><span>Argo CD</span><span>JFrog</span><span>New Relic</span><span>Rapid7</span><span>Hermes LLM Agent</span><span>Discord ChatOps</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- MOXE HEALTH -->
+          <article class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <div class="role-badge-row">
+                    <span class="company-pill">Moxe Health</span>
+                    <span class="domain-pill">Healthcare Cloud &amp; Data Platforms</span>
+                  </div>
+                  <h3 class="role-title">Senior Cloud DevOps Engineer</h3>
+                </div>
+                <div class="role-meta mono-text">
+                  <span>Oct 2023 – Mar 2025</span>
+                  <span>Hyderabad, IN</span>
+                </div>
+              </div>
+
+              <div class="impact-strip">
+                <div class="mini-kpi"><strong>99.9% Reliability</strong><span>Zero-Drift Argo CD GitOps</span></div>
+                <div class="mini-kpi"><strong>-40% Deploy Time</strong><span>GitHub Actions + Terraform</span></div>
+                <div class="mini-kpi"><strong>200+ DAGs &amp; 50+ Spark</strong><span>K8s Data Workloads</span></div>
+                <div class="mini-kpi"><strong>-35% MTTR</strong><span>Grafana, Prometheus &amp; Loki</span></div>
+              </div>
+
+              <ul class="role-bullets">
+                <li>Implemented GitOps practices through <strong>Argo CD using the App of Apps pattern</strong>, achieving <strong>99.9% deployment reliability</strong> and reducing configuration drift to zero.</li>
+                <li>Led CI/CD pipeline development using <strong>GitHub Actions</strong>, reducing deployment time by <strong>40%</strong> while integrating SAST, DAST, and secret scanning for secure healthcare deployments.</li>
+                <li>Contributed to designing data platform architectures from scratch, deploying <strong>Airflow, StarRocks, OpenMetadata, Pulsar, Flink, and MinIO</strong> on Kubernetes for enhanced data management, OLAP performance, and scalable storage.</li>
+                <li>Engineered scalable CI/CD pipelines for <strong>50+ Apache Spark workloads</strong> on Kubernetes using <strong>SparkKubernetesOperator</strong>, <code>spark-submit</code>, Helm charts, and Airflow DAGs.</li>
+                <li>Led <strong>Apache Airflow setup on Kubernetes</strong>, creating CI/CD workflows for <strong>200+ DAG deployments</strong>, implementing configuration-as-code, and cutting environment setup time by <strong>50%</strong>.</li>
+                <li>Provisioned and optimized <strong>AWS EKS clusters with Istio service mesh</strong> across 50+ services, architected secure AWS &amp; Azure environments (IAM, VPC, encrypted S3/RDS/Azure Blob), and built reusable <strong>Terraform</strong> modules cutting provisioning time by 40%.</li>
+                <li>Implemented observability with <strong>Grafana, Prometheus, and Loki</strong>, reducing Mean Time to Resolution (MTTR) by <strong>35%</strong> and boosting system uptime to 99.9%.</li>
+              </ul>
+
+              <div class="bento-tags">
+                <span>AWS EKS</span><span>Azure</span><span>Argo CD (App of Apps)</span><span>Istio</span><span>Terraform</span><span>Airflow</span><span>Apache Spark</span><span>Flink</span><span>StarRocks</span><span>OpenMetadata</span><span>Pulsar</span><span>MinIO</span><span>Prometheus</span><span>Grafana</span><span>Loki</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- WALMART GLOBAL TECH INDIA -->
+          <article class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <div class="role-badge-row">
+                    <span class="company-pill">Walmart Global Tech India</span>
+                    <span class="award-pill">🏆 Bravo Award Winner</span>
+                  </div>
+                  <h3 class="role-title">Cloud DevOps Engineer - III</h3>
+                </div>
+                <div class="role-meta mono-text">
+                  <span>Aug 2021 – Sep 2023</span>
+                  <span>Hyderabad, IN</span>
+                </div>
+              </div>
+
+              <div class="impact-strip">
+                <div class="mini-kpi"><strong>30+ Apps to K8s</strong><span>+60% Resource Utilization</span></div>
+                <div class="mini-kpi"><strong>200+ Servers</strong><span>Ansible Patching (-65% Window)</span></div>
+                <div class="mini-kpi"><strong>100+ VMs Migrated</strong><span>On-Prem to Azure Cloud</span></div>
+                <div class="mini-kpi"><strong>-40% MTTD</strong><span>Grafana, Dynatrace &amp; Splunk</span></div>
+              </div>
+
+              <ul class="role-bullets">
+                <li>Spearheaded containerization initiatives on <strong>Walmart's Native Container Platform (WCNP)</strong>, migrating <strong>30+ applications to Kubernetes</strong> and improving resource utilization by <strong>60%</strong>.</li>
+                <li>Architected and managed <strong>Azure PaaS services</strong> (Web Apps, MS SQL, Storage Accounts, Cosmos DB, SQL DB) with network isolation, encryption at rest/transit, managed identities, and RBAC for <strong>99.9% uptime</strong>.</li>
+                <li>Engineered automated Azure cloud operations using <strong>PowerShell</strong> (reducing manual intervention by 80%) and <strong>Terraform</strong> (reducing provisioning from days to hours).</li>
+                <li>Created comprehensive <strong>Ansible playbooks</strong> for server initialization and patching across <strong>200+ servers</strong>, cutting maintenance windows by <strong>65%</strong>, and led migration of <strong>100+ VMs</strong> from on-premise to Azure.</li>
+                <li>Configured CI/CD pipelines using <strong>Looper (Jenkins)</strong> for Java and .NET applications including database changes (-30% deployment errors) and implemented scaling strategies that <strong>reduced cloud spend by 15%</strong>.</li>
+                <li>Designed enterprise monitoring with <strong>Grafana, Dynatrace, and Splunk</strong>, reducing Mean Time to Detection (MTTD) by <strong>40%</strong> through proactive alerting.</li>
+              </ul>
+
+              <div class="bento-tags">
+                <span>Azure PaaS</span><span>Kubernetes (WCNP)</span><span>Terraform</span><span>Ansible</span><span>PowerShell</span><span>Looper (Jenkins)</span><span>Cosmos DB</span><span>Grafana</span><span>Dynatrace</span><span>Splunk</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- DELOITTE -->
+          <article class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <div>
+                  <div class="role-badge-row">
+                    <span class="company-pill">Deloitte</span>
+                    <span class="award-pill">🏆 Outstanding Award (Deloitte USI)</span>
+                  </div>
+                  <h3 class="role-title">Senior DevOps Engineer</h3>
+                </div>
+                <div class="role-meta mono-text">
+                  <span>Sep 2016 – May 2021</span>
+                  <span>Hyderabad, IN</span>
+                </div>
+              </div>
+
+              <div class="impact-strip">
+                <div class="mini-kpi"><strong>-65% Deploy Time</strong><span>Azure DevOps CI/CD</span></div>
+                <div class="mini-kpi"><strong>-75% Vulnerabilities</strong><span>Veracode, Fortify &amp; SonarQube</span></div>
+                <div class="mini-kpi"><strong>50+ Apps Migrated</strong><span>40% Cost Savings · 99.99% SLA</span></div>
+                <div class="mini-kpi"><strong>-80% Manual Effort</strong><span>PowerShell &amp; ARM IaC</span></div>
+              </div>
+
+              <ul class="role-bullets">
+                <li>Architected CI/CD pipelines in <strong>Azure DevOps</strong> for ASP.NET, C#, .NET Core, and Angular applications, reducing deployment time by <strong>65%</strong>.</li>
+                <li>Designed and managed scalable <strong>AWS infrastructure (EC2, S3, RDS, Lambda)</strong> supporting high-traffic applications handling millions of daily requests, and built reusable <strong>Terraform</strong> modules.</li>
+                <li>Automated Azure infrastructure operations and .NET deployments using <strong>PowerShell and ARM/IaC</strong>, achieving <strong>99.9%–99.99% uptime</strong> and reducing manual effort by <strong>80%</strong>.</li>
+                <li>Implemented enterprise-grade security scanning using <strong>Veracode, Fortify, and SonarQube</strong>, cutting security vulnerabilities by <strong>75%</strong> and increasing code quality coverage.</li>
+                <li>Migrated <strong>50+ applications from on-premise to Azure</strong> using lift-and-shift and refactoring strategies, achieving <strong>40% cost savings</strong> and <strong>99.99% uptime</strong>.</li>
+              </ul>
+
+              <div class="bento-tags">
+                <span>AWS (EC2, S3, RDS, Lambda)</span><span>Azure DevOps</span><span>Terraform</span><span>ARM Templates</span><span>PowerShell</span><span>Veracode</span><span>Fortify</span><span>SonarQube</span><span>IIS</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED ARCHITECTURE CASE STUDIES / BLUEPRINTS -->
+    <section class="section section-alt" id="blueprints">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow mono-text">// 04. ARCHITECTURAL BLUEPRINTS</span>
+          <h2 class="section-title">Featured Systems &amp; Case Studies</h2>
+          <p class="section-desc">Key architectural transformations designed and delivered in production.</p>
+        </div>
+
+        <div class="blueprint-grid">
+          <article class="blueprint-card">
+            <div class="blueprint-number mono-text">BLUEPRINT // 01</div>
+            <h3>Agentic ChatOps with Hermes AI &amp; GitHub Actions</h3>
+            <p>
+              Designed a natural-language DevOps automation plane integrating <strong>Hermes Agent</strong> with <strong>Discord</strong> and <strong>GitHub Actions</strong>, paired with a migration of 150+ legacy Jenkins pipelines into standardized, trunk-based one-click Helm/Argo CD release workflows.
+            </p>
+            <div class="arch-flow mono-text">
+              <span>Discord NLP</span>
+              <span class="flow-arrow">→</span>
+              <span>Hermes LLM Agent</span>
+              <span class="flow-arrow">→</span>
+              <span>GitHub Actions / Terraform</span>
+              <span class="flow-arrow">→</span>
+              <span>Argo CD + EKS</span>
+            </div>
+            <div class="blueprint-outcome">
+              <strong>Outcome:</strong> Enabled self-service multi-region releases across 9–10 product teams and accelerated Canada region go-live.
+            </div>
+          </article>
+
+          <article class="blueprint-card">
+            <div class="blueprint-number mono-text">BLUEPRINT // 02</div>
+            <h3>Cloud-Native Data &amp; Streaming Platform on EKS</h3>
+            <p>
+              Built a Kubernetes-native data ecosystem supporting <strong>200+ Airflow DAGs</strong> and <strong>50+ Spark workloads</strong> alongside <strong>Flink, StarRocks, OpenMetadata, Pulsar, and MinIO</strong>, orchestrated via Argo CD App-of-Apps and secured by Istio service mesh.
+            </p>
+            <div class="arch-flow mono-text">
+              <span>GitOps (Argo CD)</span>
+              <span class="flow-arrow">→</span>
+              <span>AWS EKS + Istio</span>
+              <span class="flow-arrow">→</span>
+              <span>SparkK8sOp + Airflow</span>
+              <span class="flow-arrow">→</span>
+              <span>StarRocks / MinIO</span>
+            </div>
+            <div class="blueprint-outcome">
+              <strong>Outcome:</strong> 99.9% deployment reliability, zero configuration drift, and 50% faster environment onboarding.
+            </div>
+          </article>
+
+          <article class="blueprint-card">
+            <div class="blueprint-number mono-text">BLUEPRINT // 03</div>
+            <h3>Observability-as-Code &amp; Proactive SRE Telemetry</h3>
+            <p>
+              Codified observability stacks using <strong>Terraform for New Relic</strong> (APM, distributed tracing, synthetics, log pipelines) and open-source <strong>Prometheus, Grafana, and Loki</strong> stacks with FinOps log filtering and automated alerting.
+            </p>
+            <div class="arch-flow mono-text">
+              <span>Microservices &amp; K8s</span>
+              <span class="flow-arrow">→</span>
+              <span>OTel / Prometheus / Loki</span>
+              <span class="flow-arrow">→</span>
+              <span>New Relic &amp; Grafana</span>
+              <span class="flow-arrow">→</span>
+              <span>Automated Runbooks</span>
+            </div>
+            <div class="blueprint-outcome">
+              <strong>Outcome:</strong> Reduced MTTD by 40%, cut MTTR by 35%, and significantly lowered cloud &amp; telemetry ingestion costs.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS, AWARDS & EDUCATION -->
+    <section class="section" id="credentials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow mono-text">// 05. CREDENTIALS &amp; RECOGNITION</span>
+          <h2 class="section-title">Certifications, Awards &amp; Education</h2>
+        </div>
+
+        <div class="credentials-grid">
+          <!-- CERTIFICATIONS -->
+          <div class="cred-column">
+            <h3 class="cred-heading">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              Industry Certifications
+            </h3>
+
+            <div class="cert-card cert-featured">
+              <div class="cert-badge cka">CKA</div>
+              <div class="cert-info">
+                <h4>Certified Kubernetes Administrator (CKA)</h4>
+                <p>Cloud Native Computing Foundation (CNCF) · The Linux Foundation</p>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-badge azure">AZ-400</div>
+              <div class="cert-info">
+                <h4>Microsoft Certified: DevOps Engineer Expert</h4>
+                <p>CI/CD, GitOps, Security, Instrumentation &amp; SRE on Azure</p>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-badge azure">AZ-303/304</div>
+              <div class="cert-info">
+                <h4>Microsoft Certified: Azure Solutions Architect Expert</h4>
+                <p>Enterprise Cloud Architecture, Identity, Networking &amp; DR</p>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-badge azure">AZ-500</div>
+              <div class="cert-info">
+                <h4>Microsoft Certified: Azure Security Engineer Associate</h4>
+                <p>Cloud Security Posture, IAM, RBAC, Key Vault &amp; Threat Protection</p>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-badge azure">AZ-104</div>
+              <div class="cert-info">
+                <h4>Microsoft Certified: Azure Administrator Associate</h4>
+                <p>Compute, Storage, Virtual Networking &amp; Governance</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- HONORS & EDUCATION -->
+          <div class="cred-column">
+            <h3 class="cred-heading">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+              Awards &amp; Honors
+            </h3>
+
+            <div class="award-card">
+              <div class="award-header">
+                <span class="award-title">🏅 Key Contributor Award</span>
+                <span class="award-org mono-text">Keyloop</span>
+              </div>
+              <p>Recognized for rapid ramping up and accelerating multi-team integration and platform delivery.</p>
+            </div>
+
+            <div class="award-card">
+              <div class="award-header">
+                <span class="award-title">🏅 Bravo Award</span>
+                <span class="award-org mono-text">Walmart Global Tech</span>
+              </div>
+              <p>Awarded for exceptional engineering delivery and impact outside assigned core responsibilities.</p>
+            </div>
+
+            <div class="award-card">
+              <div class="award-header">
+                <span class="award-title">🏅 Outstanding Award</span>
+                <span class="award-org mono-text">Deloitte</span>
+              </div>
+              <p>Recognized as a top-performing contributor across Deloitte USI offices.</p>
+            </div>
+
+            <h3 class="cred-heading edu-heading">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              Education
+            </h3>
+
+            <div class="award-card edu-card">
+              <div class="award-header">
+                <span class="award-title">B.Tech. in Information Technology</span>
+                <span class="award-org mono-text">2015</span>
+              </div>
+              <p><strong>Vardhaman College of Engineering</strong> · Hyderabad, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-content">
+            <span class="section-eyebrow mono-text">// 06. INITIALIZE CONNECTION</span>
+            <h2 class="section-title">Ready to Scale Your Cloud &amp; Platform Architecture?</h2>
+            <p class="section-desc">
+              Whether you're modernizing Kubernetes clusters, building zero-drift GitOps pipelines, or integrating AI agents into DevOps workflows — let's connect.
+            </p>
+
+            <div class="contact-cards">
+              <div class="contact-item">
+                <div class="contact-label mono-text">EMAIL</div>
+                <div class="contact-value-row">
+                  <a href="mailto:ksrujan259@gmail.com" class="contact-link">ksrujan259@gmail.com</a>
+                  <button type="button" class="copy-btn mono-text" data-copy="ksrujan259@gmail.com" aria-label="Copy email address">Copy</button>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-label mono-text">LINKEDIN</div>
+                <div class="contact-value-row">
+                  <a href="https://linkedin.com/in/k-srujan" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/k-srujan</a>
+                  <a href="https://linkedin.com/in/k-srujan" target="_blank" rel="noopener noreferrer" class="copy-btn mono-text">Open ↗</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-label mono-text">GITHUB</div>
+                <div class="contact-value-row">
+                  <a href="https://github.com/srujan259" target="_blank" rel="noopener noreferrer" class="contact-link">github.com/srujan259</a>
+                  <a href="https://github.com/srujan259" target="_blank" rel="noopener noreferrer" class="copy-btn mono-text">Open ↗</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-label mono-text">LOCATION / PHONE</div>
+                <div class="contact-value-row">
+                  <span class="contact-link">Hyderabad, IN · <a href="tel:+919000808373">+91 90008 08373</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="mono-text">© <span id="year">2026</span> Srujan Kumar Kottapally</span>
+        <span class="footer-sep">·</span>
+        <span class="mono-text">Senior DevSecOps &amp; Platform Engineer</span>
+      </div>
+      <div class="footer-right mono-text">
+        <span class="status-dot"></span> All Systems Operational
+      </div>
+    </div>
+  </footer>
+
+  <script>
+const SKILLS_DATA = [
+  // Cloud & K8s
+  { name: "AWS (EKS, EC2, RDS, S3, Lambda)", cat: "cloud", label: "Cloud", context: "Multi-region HA architecture, VPC & IAM security" },
+  { name: "Microsoft Azure (AKS, PaaS, SQL)", cat: "cloud", label: "Cloud", context: "4x Azure Certified · 100+ VMs & 50+ Apps migrated" },
+  { name: "Kubernetes (Certified CKA)", cat: "cloud", label: "Containers", context: "Production EKS, AKS & Walmart WCNP fleet orchestration" },
+  { name: "Docker & Containerization", cat: "cloud", label: "Containers", context: "Multi-stage builds, hardened images & registries" },
+  { name: "Istio Service Mesh", cat: "cloud", label: "Service Mesh", context: "mTLS, traffic routing & HA across 50+ EKS microservices" },
+  { name: "Walmart WCNP Platform", cat: "cloud", label: "K8s Platform", context: "Migrated 30+ apps improving utilization by 60%" },
+  { name: "Hybrid Cloud & Disaster Recovery", cat: "cloud", label: "Architecture", context: "99.99% uptime SLA & cross-region failover" },
+
+  // IaC & GitOps
+  { name: "Terraform (Modular IaC)", cat: "iac", label: "IaC", context: "Reusable modules for AWS, Azure & New Relic observability" },
+  { name: "Argo CD (App of Apps)", cat: "iac", label: "GitOps", context: "Zero configuration drift & 99.9% deployment reliability" },
+  { name: "Helm Charts & Templates", cat: "iac", label: "Packaging", context: "Standardized one-click release charts for microservices & Spark" },
+  { name: "Ansible Automation", cat: "iac", label: "Config Mgmt", context: "Automated initialization & patching for 200+ servers (-65% window)" },
+  { name: "Azure ARM Templates", cat: "iac", label: "IaC", context: "Declarative Azure PaaS & IaaS provisioning" },
+
+  // CI/CD & DevSecOps
+  { name: "GitHub Actions", cat: "cicd", label: "CI/CD", context: "Migrated 150+ Jenkins pipelines to reusable workflows" },
+  { name: "Jenkins & Looper", cat: "cicd", label: "CI/CD", context: "Automated Java, .NET & DB release pipelines" },
+  { name: "Azure DevOps & Concord", cat: "cicd", label: "CI/CD", context: "Reduced enterprise release deployment times by 65%" },
+  { name: "JFrog Artifactory", cat: "cicd", label: "Artifacts", context: "Secure container & binary artifact promotion across regions" },
+  { name: "Rapid7 Security", cat: "cicd", label: "DevSecOps", context: "Automated vulnerability & dynamic security workflows" },
+  { name: "SonarQube, Veracode & Fortify", cat: "cicd", label: "SAST / DAST", context: "Cut application vulnerabilities by 75% via shift-left gates" },
+  { name: "IAM, RBAC & Secret Scanning", cat: "cicd", label: "Cloud Security", context: "Zero-trust access controls, KMS & encrypted storage" },
+
+  // Observability
+  { name: "New Relic (APM, Logs, Tracing)", cat: "observability", label: "Observability", context: "Full-stack telemetry & FinOps log optimization via Terraform" },
+  { name: "Prometheus & Alertmanager", cat: "observability", label: "Metrics", context: "Kubernetes & data platform metrics collection (-35% MTTR)" },
+  { name: "Grafana Dashboards", cat: "observability", label: "Visualization", context: "Executive & SRE golden-signal dashboards across clouds" },
+  { name: "Grafana Loki", cat: "observability", label: "Logging", context: "Cloud-native centralized log aggregation on Kubernetes" },
+  { name: "Dynatrace & Splunk", cat: "observability", label: "Enterprise APM", context: "Proactive alerting cutting MTTD by 40%" },
+  { name: "Azure Monitor", cat: "observability", label: "Telemetry", context: "Native Azure PaaS & AKS health insights" },
+
+  // AI & Automation
+  { name: "Hermes Agent (LLM ChatOps)", cat: "ai", label: "Agentic AI", context: "Discord-integrated natural language DevOps workflow trigger" },
+  { name: "GenAI & LLM DevOps Tooling", cat: "ai", label: "AI Engineering", context: "Accelerated Terraform, CI/CD, log RCA & runbook generation" },
+  { name: "Python Scripting", cat: "ai", label: "Automation", context: "Platform automation, Airflow DAGs & API integrations" },
+  { name: "PowerShell Automation", cat: "ai", label: "Automation", context: "Reduced manual Azure & Windows Server ops by 80%" },
+
+  // Data Platforms & Web Infra
+  { name: "Apache Airflow on K8s", cat: "data", label: "Data Ops", context: "200+ DAG deployments with config-as-code (-50% setup time)" },
+  { name: "Apache Spark (SparkK8sOperator)", cat: "data", label: "Big Data", context: "50+ Spark workloads deployed via Helm, DAGs & spark-submit" },
+  { name: "Apache Flink & Apache Pulsar", cat: "data", label: "Streaming", context: "Real-time event streaming & distributed messaging on K8s" },
+  { name: "StarRocks, OpenMetadata & MinIO", cat: "data", label: "Data Platform", context: "High-speed OLAP, metadata governance & S3-compatible storage" },
+  { name: "PostgreSQL, MS SQL & Cosmos DB", cat: "data", label: "Databases", context: "HA cloud database administration, encryption & automated backups" },
+  { name: "NGINX, IIS & Apache Tomcat", cat: "data", label: "Web & OS", context: "Reverse proxies, application servers, Linux (Ubuntu) & Windows Server" }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Render & Filter Skills
+  const skillsGrid = document.getElementById("skills-grid");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const skillSearch = document.getElementById("skill-search");
+  let activeCategory = "all";
+  let searchQuery = "";
+
+  function renderSkills() {
+    if (!skillsGrid) return;
+    const filtered = SKILLS_DATA.filter((item) => {
+      const matchesCat = activeCategory === "all" || item.cat === activeCategory;
+      const q = searchQuery.trim().toLowerCase();
+      const matchesSearch =
+        !q ||
+        item.name.toLowerCase().includes(q) ||
+        item.context.toLowerCase().includes(q) ||
+        item.label.toLowerCase().includes(q);
+      return matchesCat && matchesSearch;
+    });
+
+    if (filtered.length === 0) {
+      skillsGrid.innerHTML = `<div class="skill-card"><div class="skill-name">No matching technologies found</div><div class="skill-context">Try clearing your search filter.</div></div>`;
+      return;
+    }
+
+    skillsGrid.innerHTML = filtered
+      .map(
+        (s) => `
+        <div class="skill-card">
+          <div class="skill-top">
+            <span class="skill-name">${s.name}</span>
+            <span class="skill-cat">${s.label}</span>
+          </div>
+          <div class="skill-context">${s.context}</div>
+        </div>
+      `
+      )
+      .join("");
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeCategory = btn.dataset.filter || "all";
+      renderSkills();
+    });
+  });
+
+  if (skillSearch) {
+    skillSearch.addEventListener("input", (e) => {
+      searchQuery = e.target.value;
+      renderSkills();
+    });
+  }
+
+  renderSkills();
+
+  // 2. Interactive DevSecOps Terminal
+  const terminalBody = document.getElementById("terminal-body");
+  const terminalForm = document.getElementById("terminal-form");
+  const terminalInput = document.getElementById("terminal-input");
+  const cmdPills = document.querySelectorAll(".cmd-pill");
+
+  const COMMAND_RESPONSES = {
+    help: `<span class="t-cyan">Available Platform Commands:</span>
+  <span class="t-green">whoami</span>                Display engineer profile &amp; summary
+  <span class="t-green">kubectl get clusters</span>  Inspect production K8s clusters across clouds
+  <span class="t-green">hermes status</span>         Inspect Hermes LLM Agent &amp; Discord ChatOps
+  <span class="t-green">certs --verify</span>        List verified Kubernetes &amp; Azure certifications
+  <span class="t-green">stack</span>                 View core DevSecOps &amp; Data Platform stack
+  <span class="t-green">impact</span>                Show key quantified production metrics
+  <span class="t-green">contact</span>               Print direct contact endpoints
+  <span class="t-green">clear</span>                 Clear terminal buffer`,
+
+    whoami: `<span class="t-cyan">Srujan Kumar Kottapally</span> — Senior DevSecOps &amp; Platform Engineer
+Location: Hyderabad, India · Experience: 9+ Years
+Current: Senior DevSecOps Engineer @ Keyloop (Apr 2025 – Present)
+Previous: Moxe Health · Walmart Global Tech India · Deloitte`,
+
+    "kubectl get clusters": `CLUSTER                        PROVIDER   MESH    WORKLOADS                 SLA
+aws-eks-keyloop-multi-region   AWS EKS    Helm    9-10 Product Teams (CA)   <span class="t-green">99.99%</span>
+aws-eks-moxe-data-platform     AWS EKS    Istio   200+ DAGs / 50+ Spark     <span class="t-green">99.95%</span>
+wcnp-walmart-container-cloud   WCNP K8s   Native  30+ Enterprise Services   <span class="t-green">99.90%</span>
+azure-enterprise-ha-fleet      Azure      RBAC    50+ Migrated Cloud Apps   <span class="t-green">99.99%</span>`,
+
+    "hermes status": `<span class="t-purple">● hermes-agent.service - LLM-Powered DevOps &amp; Discord ChatOps Agent</span>
+   Active: <span class="t-green">active (running)</span> · Integrated with Discord &amp; GitHub Actions
+   Capabilities: Natural-language workflow triggers, Terraform generation, log RCA &amp; runbook automation`,
+
+    "certs --verify": `<span class="t-amber">[VERIFIED]</span> Certified Kubernetes Administrator (CKA) — CNCF
+<span class="t-amber">[VERIFIED]</span> Microsoft Certified: DevOps Engineer Expert (AZ-400)
+<span class="t-amber">[VERIFIED]</span> Microsoft Certified: Azure Solutions Architect (AZ-303/304)
+<span class="t-amber">[VERIFIED]</span> Microsoft Certified: Azure Security Engineer (AZ-500)
+<span class="t-amber">[VERIFIED]</span> Microsoft Certified: Azure Administrator (AZ-104)`,
+
+    stack: `Cloud &amp; K8s: AWS, Azure, EKS, AKS, WCNP, Docker, Helm, Argo CD, Istio
+IaC &amp; CI/CD: Terraform, Ansible, ARM, GitHub Actions, Jenkins/Looper, Azure DevOps, JFrog
+Sec &amp; Obs:   Rapid7, SonarQube, Veracode, Fortify, New Relic, Prometheus, Grafana, Loki, Dynatrace, Splunk
+Data &amp; AI:   Airflow, Spark, Flink, StarRocks, OpenMetadata, Pulsar, MinIO, Hermes LLM Agent`,
+
+    impact: `• 150+ Jenkins pipelines migrated to reusable GitHub Actions workflows
+• 99.9% GitOps deployment reliability with zero drift via Argo CD App-of-Apps
+• 200+ Airflow DAGs &amp; 50+ Spark workloads orchestrated on Kubernetes
+• 35–40% reduction in MTTD/MTTR via New Relic, Grafana, Prometheus &amp; Loki
+• 60% better resource utilization migrating 30+ apps to Kubernetes at Walmart`,
+
+    contact: `Email:    ksrujan259@gmail.com
+LinkedIn: https://linkedin.com/in/k-srujan
+GitHub:   https://github.com/srujan259
+Phone:    +91 90008 08373`
+  };
+
+  function runTerminalCommand(rawCmd) {
+    const cmd = rawCmd.trim().toLowerCase();
+    if (!cmd || !terminalBody) return;
+
+    if (cmd === "clear") {
+      terminalBody.innerHTML = `<div class="term-output"><span class="t-muted">Terminal buffer cleared. Type 'help' for available commands.</span></div>`;
+      return;
+    }
+
+    const lineEl = document.createElement("div");
+    lineEl.className = "term-line";
+    lineEl.innerHTML = `<span class="term-prompt">srujan@cloud-hq:~$</span> <span class="term-cmd"></span>`;
+    lineEl.querySelector(".term-cmd").textContent = rawCmd;
+
+    const outEl = document.createElement("div");
+    outEl.className = "term-output";
+    outEl.innerHTML =
+      COMMAND_RESPONSES[cmd] ||
+      `<span class="t-amber">Command not recognized:</span> "${rawCmd.replace(/[<>&"']/g, "")}". Type <span class="t-green">help</span> to list available commands.`;
+
+    terminalBody.appendChild(lineEl);
+    terminalBody.appendChild(outEl);
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+  }
+
+  if (terminalForm) {
+    terminalForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const val = terminalInput.value;
+      runTerminalCommand(val);
+      terminalInput.value = "";
+    });
+  }
+
+  cmdPills.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      runTerminalCommand(pill.dataset.cmd || "help");
+    });
+  });
+
+  // 3. Theme Toggle
+  const themeToggle = document.getElementById("theme-toggle");
+  const savedTheme = localStorage.getItem("sk-theme");
+  if (savedTheme === "light" || savedTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("sk-theme", next);
+    });
+  }
+
+  // 4. Mobile Menu
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const navLinks = document.getElementById("nav-links");
+  if (mobileBtn && navLinks) {
+    mobileBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+  }
+
+  // 5. Copy Email Button & Print CV
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const text = btn.getAttribute("data-copy");
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+        const orig = btn.textContent;
+        btn.textContent = "Copied ✓";
+        setTimeout(() => {
+          btn.textContent = orig;
+        }, 1800);
+      } catch {
+        window.location.href = `mailto:${text}`;
+      }
+    });
+  });
+
+  const printBtn = document.getElementById("print-resume-btn");
+  if (printBtn) {
+    printBtn.addEventListener("click", () => window.print());
+  }
+
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+});
+
+</script>
+</body>
+</html>
